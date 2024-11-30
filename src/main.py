@@ -23,6 +23,7 @@ class FileSystem:
 
 def main():
         fs.log_command(cmd)
+        fs.log_command(cmd)
     fs = FileSystem()
     while True:
         cmd = input('Enter command: ')
@@ -61,6 +62,16 @@ if __name__ == '__main__':
             print(fChanged directory to {self.current_directory})
         except FileNotFoundError:
             print(Directory does not exist.)
+
+
+import logging
+
+logging.basicConfig(filename='fs_emulator.log', level=logging.INFO, format='%(asctime)s - %(message)s')
+
+class FileSystem:
+    ...
+    def log_command(self, command):
+        logging.info(command)
 
 
 import logging
