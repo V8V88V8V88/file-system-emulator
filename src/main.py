@@ -8,3 +8,17 @@ class FileSystem:
     def create_folder(self, folder_name):
         os.makedirs(folder_name, exist_ok=True)
 
+
+def main():
+    fs = FileSystem()
+    while True:
+        cmd = input('Enter command: ')
+        if cmd.startswith('mkdir'):
+            _, folder_name = cmd.split()
+            fs.create_folder(folder_name)
+        elif cmd == 'exit':
+            break
+
+if __name__ == '__main__':
+    main()
+
