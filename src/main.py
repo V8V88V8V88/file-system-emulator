@@ -6,6 +6,9 @@ class FileSystem:
         self.current_directory = os.getcwd()
 
     def create_folder(self, folder_name):
+    def touch_file(self, file_name):
+        with open(file_name, "w") as f:
+            f.write("")
     def create_file(self, file_name):
         with open(file_name, "w") as f:
             f.write("")
