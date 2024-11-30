@@ -6,6 +6,9 @@ class FileSystem:
         self.current_directory = os.getcwd()
 
     def create_folder(self, folder_name):
+    def create_file(self, file_name):
+        with open(file_name, "w") as f:
+            f.write("")
         os.makedirs(folder_name, exist_ok=True)
 
 
