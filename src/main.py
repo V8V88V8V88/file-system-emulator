@@ -37,3 +37,9 @@ if __name__ == '__main__':
         for item in contents:
             print(item)
 
+
+    def list_directory(self):
+        contents = os.listdir(self.current_directory)
+        for item in contents:
+            print(item)
+
