@@ -9,10 +9,16 @@ class FileSystem:
     def touch_file(self, file_name):
         with open(file_name, "w") as f:
             f.write("")
+        except Exception as e:
+            print(f"Error creating file: {e}")
     def create_file(self, file_name):
         with open(file_name, "w") as f:
             f.write("")
+        except Exception as e:
+            print(f"Error creating file: {e}")
         os.makedirs(folder_name, exist_ok=True)
+        except OSError as e:
+            print(f"Error: {e}")
 
 
 def main():
