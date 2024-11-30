@@ -43,3 +43,12 @@ if __name__ == '__main__':
         for item in contents:
             print(item)
 
+
+    def change_directory(self, directory_name):
+        try:
+            os.chdir(directory_name)
+            self.current_directory = os.getcwd()
+            print(fChanged directory to {self.current_directory})
+        except FileNotFoundError:
+            print(Directory does not exist.)
+
