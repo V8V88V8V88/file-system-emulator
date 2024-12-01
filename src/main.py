@@ -117,3 +117,16 @@ class FileSystem:
         except OSError as e:
             print(fError removing file: {e})
 
+
+    def display_tree(self, path=None, prefix=''):
+        if path is None:
+            path = self.current_directory
+
+        contents = os.listdir(path)
+        for i, item in enumerate(contents):
+            connector = '└── ' if i == len(contents) - 1 else '├── '
+            print(f{prefix}{connector}{item})
+            item_path = os.path.join(path, item)
+            if os.path.isdir(item_path):
+                self.display_tree(item_path, prefix + ('    ' if i == len(contents) - 1 else '│   '))
+
