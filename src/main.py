@@ -40,19 +40,19 @@ if __name__ == '__main__':
     def list_directory(self):
         contents = os.listdir(self.current_directory)
         for item in contents:
-            print(item)
+            print(Colors.colorize(item, Colors.OKCYAN) if os.path.isdir(os.path.join(self.current_directory, item)) else Colors.colorize(item, Colors.OKGREEN))
 
 
     def list_directory(self):
         contents = os.listdir(self.current_directory)
         for item in contents:
-            print(item)
+            print(Colors.colorize(item, Colors.OKCYAN) if os.path.isdir(os.path.join(self.current_directory, item)) else Colors.colorize(item, Colors.OKGREEN))
 
 
     def list_directory(self):
         contents = os.listdir(self.current_directory)
         for item in contents:
-            print(item)
+            print(Colors.colorize(item, Colors.OKCYAN) if os.path.isdir(os.path.join(self.current_directory, item)) else Colors.colorize(item, Colors.OKGREEN))
 
 
     def change_directory(self, directory_name):
@@ -129,4 +129,18 @@ class FileSystem:
             item_path = os.path.join(path, item)
             if os.path.isdir(item_path):
                 self.display_tree(item_path, prefix + ('    ' if i == len(contents) - 1 else '│   '))
+
+
+class Colors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+
+    @staticmethod
+    def colorize(text, color):
+        return f{color}{text}{Colors.ENDC}
 
