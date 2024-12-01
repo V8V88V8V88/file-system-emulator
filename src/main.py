@@ -144,3 +144,19 @@ class Colors:
     def colorize(text, color):
         return f{color}{text}{Colors.ENDC}
 
+
+    def show_help(self):
+        help_text = '''
+Available Commands:
+- mkdir folder_name: Create a folder
+- touch file_name: Create an empty file
+- ls: List directory contents
+- cd directory_name: Change directory
+- rm file_name: Remove a file
+- tree: Display directory structure
+- pwd: Show current working directory
+- help: Show this help message
+- exit: Exit the program
+'''
+        print(help_text)
+
