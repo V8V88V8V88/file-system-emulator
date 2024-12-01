@@ -83,3 +83,7 @@ class FileSystem:
     def log_command(self, command):
         logging.info(command)
 
+
+    def print_working_directory(self):
+        print(self.current_directory)
+
