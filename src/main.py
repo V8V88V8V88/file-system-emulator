@@ -123,3 +123,23 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+    def rename(self, old_name, new_name):
+        try:
+            os.rename(old_name, new_name)
+            print(f"Renamed \"{old_name}\" to \"{new_name}\" successfully.")
+        except FileNotFoundError:
+            print("File or folder not found.")
+        except OSError as e:
+            print(f"Error renaming file or folder: {e}")
+
+
+    def file_size(self, file_name):
+        try:
+            size = os.path.getsize(file_name)
+            print(f"Size of \"{file_name}\": {size} bytes")
+        except FileNotFoundError:
+            print("File not found.")
+        except OSError as e:
+            print(f"Error retrieving file size: {e}")
+
