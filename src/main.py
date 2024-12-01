@@ -97,3 +97,13 @@ class FileSystem:
         except OSError as e:
             print(fError removing file: {e})
 
+
+    def remove_file(self, file_name):
+        try:
+            os.remove(file_name)
+            print(fFile {file_name} removed successfully.)
+        except FileNotFoundError:
+            print(File not found.)
+        except OSError as e:
+            print(fError removing file: {e})
+
