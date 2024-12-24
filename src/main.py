@@ -20,7 +20,8 @@ class Colors:
 
 class FileSystem:
     def __init__(self):
-        self.current_directory = os.getcwd()
+    self.current_directory = os.getcwd()
+    print(f"Initialized FileSystem with current directory: {self.current_directory}")
 
     def create_folder(self, folder_name):
         try:
