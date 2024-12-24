@@ -20,9 +20,8 @@ class Colors:
 
 class FileSystem:
     def __init__(self):
-    self.current_directory = os.getcwd()
-    print(f"Initialized FileSystem with current directory: {self.current_directory}")
-
+        self.current_directory = os.getcwd()
+        print(f"Initialized FileSystem with current directory: {self.current_directory}")
 
     def create_folder(self, folder_name):
         try:
@@ -115,6 +114,10 @@ Available Commands:
     def log_command(self, command):
         logging.info(command)
 
+    def view_logs(self):
+        try:
+            with open('fs_emulator.log', 'r') as log_file:
+                print("Recent Logs:")
                 print(log_file.read())
         except FileNotFoundError:
             print("No logs available.")
@@ -171,10 +174,6 @@ def main():
                 print("Unknown command. Type 'help' for available commands.")
         except ValueError:
             print("Invalid command format. Check 'help' for correct usage.")
-            print(log_file.read())
-    except FileNotFoundError:
-        print("No logs available.")
-
 
 if __name__ == '__main__':
     main()
