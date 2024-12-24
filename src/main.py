@@ -115,10 +115,6 @@ Available Commands:
     def log_command(self, command):
         logging.info(command)
 
-    def view_logs(self):
-        try:
-            with open('fs_emulator.log', 'r') as log_file:
-                print("Recent Logs:")
                 print(log_file.read())
         except FileNotFoundError:
             print("No logs available.")
@@ -175,10 +171,6 @@ def main():
                 print("Unknown command. Type 'help' for available commands.")
         except ValueError:
             print("Invalid command format. Check 'help' for correct usage.")
-def view_logs(self):
-    try:
-        with open('fs_emulator.log', 'r') as log_file:
-            print("Recent Logs:")
             print(log_file.read())
     except FileNotFoundError:
         print("No logs available.")
